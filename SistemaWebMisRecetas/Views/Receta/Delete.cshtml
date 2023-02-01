@@ -1,0 +1,47 @@
+﻿@model SistemaWebMisRecetas.Models.Receta
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>@Model.Titulo</h2>
+<p>¿Desea eliminar esta receta?</p>
+
+@using (Html.BeginForm("Delete", "Receta", FormMethod.Post))
+{
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Titulo)</span>
+        <span>@Html.DisplayFor(model => model.Titulo)</span>
+    </div>
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Categoria)</span>
+        <span>@Html.DisplayFor(model => model.Categoria)</span>
+    </div>
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Ingredientes)</span>
+        <span>@Html.DisplayFor(model => model.Ingredientes)</span>
+    </div>
+        <div>
+        <span>@Html.DisplayNameFor(model => model.Instrucciones)</span>
+        <span>@Html.DisplayFor(model => model.Instrucciones)</span>
+    </div>
+        <div>
+        <span>@Html.DisplayNameFor(model => model.AutorNombre)</span>
+        <span>@Html.DisplayFor(model => model.AutorNombre)</span>
+    </div>
+        <div>
+        <span>@Html.DisplayNameFor(model => model.AutorApellido)</span>
+        <span>@Html.DisplayFor(model => model.AutorApellido)</span>
+    </div>
+        <div>
+        <span>@Html.DisplayNameFor(model => model.AutorEdad)</span>
+        <span>@Html.DisplayFor(model => model.AutorEdad)</span>
+    </div>
+    <div>
+        <span>@Html.DisplayNameFor(model => model.AutorEmail)</span>
+        <span>@Html.DisplayFor(model => model.AutorEmail)</span>
+    </div>
+    <input type="submit" action="Delete" />
+
+    @Html.ActionLink("Volver", "Index", "Receta")
+}

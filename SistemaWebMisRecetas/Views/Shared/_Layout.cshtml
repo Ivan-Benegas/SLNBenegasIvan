@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/main.css" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <p>MIS RECETAS</p>
+    </header>
+    <navbar>
+        @Html.ActionLink("Inicio", "Index", "Home")
+        @Html.ActionLink("Recetas", "Index", "Receta")
+    </navbar>
+    <main>
+        @RenderBody()
+    </main>
+    <aside>
+        @if (IsSectionDefined("SideBar"))
+        {
+            @RenderSection("SideBar")
+        }
+        else
+        {
+            @Html.ActionLink("Recetas", "Index", "Receta")
+            // @Html.ActionLink("Editar", "Edit", "Receta", new{id=item.OperaId})
+            // @Html.ActionLink("Eliminar", "Delete", "Receta", new{id=item.OperaId})
+        }
+    </aside>
+    <footer>
+        <p>misrecetas@web.com</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+

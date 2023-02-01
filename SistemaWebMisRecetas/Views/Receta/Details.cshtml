@@ -1,0 +1,53 @@
+﻿@model SistemaWebMisRecetas.Models.Receta
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Ver Detalle</h2>
+<br>
+
+
+<p>
+    @Html.DisplayNameFor(model => model.Titulo):
+    @Html.DisplayFor(model => model.Titulo)
+</p>
+<br>
+<p>
+    @Html.DisplayNameFor(model => model.Categoria):
+    @Html.DisplayFor(model => model.Categoria)
+</p>
+<br>
+<p>
+    @Html.DisplayNameFor(model => model.Ingredientes):
+    @Html.DisplayFor(model => model.Ingredientes)
+</p>
+<br>
+<p>
+    @Html.DisplayNameFor(model => model.Instrucciones):
+    @Html.DisplayFor(model => model.Instrucciones)
+</p>
+<br>
+<p>
+    @Html.DisplayNameFor(model => model.AutorNombre):
+    @Html.DisplayFor(model => model.AutorNombre)
+</p>
+<br>
+<p>
+    @Html.DisplayNameFor(model => model.AutorApellido):
+    @Html.DisplayFor(model => model.AutorApellido)
+</p>
+<br>
+<p>
+    @Html.DisplayNameFor(model => model.AutorEdad):
+    @Html.DisplayFor(model => model.AutorEdad)
+</p>
+<br>
+<p>
+    @Html.DisplayNameFor(model => model.AutorEmail):
+    @Html.DisplayFor(model => model.AutorEmail)
+</p>
+<br>
+
+@Html.ActionLink("Volver a index", "Index", "Receta")
+

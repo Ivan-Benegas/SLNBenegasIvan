@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SistemaWebMisRecetas.Models.Receta>
+
+@{
+    ViewData["Title"] = "Index Receta";
+}
+
+<div class="crear-receta">@Html.ActionLink("Nueva", "Create", "Receta")</div>
+<br>
+<br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Categoria</th>
+        <th>Ingredientes</th>
+        <th>Instrucciones</th>
+        <th>Nombre del autor</th>
+        <th>Apellido del autor</th>
+        <th>Edad del autor</th>
+        <th>Email del autor</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.ActionLink(item.Titulo, "Details", "Receta", new{id=item.Id})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingredientes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instrucciones)
+            </td>
+            <td>
+                @Html.ActionLink(item.AutorNombre, "GetByNombre", "Receta", new{nombre=item.AutorNombre})
+            </td>
+            <td>
+                @Html.ActionLink(item.AutorApellido, "GetByApellido", "Receta", new{apellido=item.AutorApellido})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutorEdad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutorEmail)
+            </td>
+        </tr>
+    }
+
+</table>
