@@ -4,49 +4,58 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Ver Detalle</h2>
+@section SideBar{
+    <ul>
+        <li>@Html.ActionLink("Recetas", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Nueva", "Create", "Receta")</li>
+        <li>@Html.ActionLink("Editar", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Eliminar", "Index", "Receta")</li>
+    </ul>
+}
+
+<h1>Ver Detalle</h1>
 <br>
 
 
-<p>
-    @Html.DisplayNameFor(model => model.Titulo):
-    @Html.DisplayFor(model => model.Titulo)
-</p>
+<div>
+    <span>@Html.DisplayNameFor(model => model.Titulo)</span>:
+    <span>@Html.DisplayFor(model => model.Titulo)</span>
+</div>
 <br>
-<p>
-    @Html.DisplayNameFor(model => model.Categoria):
-    @Html.DisplayFor(model => model.Categoria)
-</p>
+<div>
+    <span>@Html.DisplayNameFor(model => model.Categoria)</span>:
+    <span>@Html.DisplayFor(model => model.Categoria)</span>
+</div>
 <br>
-<p>
-    @Html.DisplayNameFor(model => model.Ingredientes):
-    @Html.DisplayFor(model => model.Ingredientes)
-</p>
+<div>
+    <span>@Html.DisplayNameFor(model => model.Ingredientes)</span>:
+    <span>@Html.DisplayFor(model => model.Ingredientes)</span>
+</div>
 <br>
-<p>
-    @Html.DisplayNameFor(model => model.Instrucciones):
-    @Html.DisplayFor(model => model.Instrucciones)
-</p>
+<div>
+    <span>@Html.DisplayNameFor(model => model.Instrucciones)</span>:
+    <span>@Html.DisplayFor(model => model.Instrucciones)</span>
+</div>
 <br>
-<p>
-    @Html.DisplayNameFor(model => model.AutorNombre):
-    @Html.DisplayFor(model => model.AutorNombre)
-</p>
+<div>
+    <span>@Html.DisplayNameFor(model => model.AutorNombre)</span>:
+    <span>@Html.DisplayFor(model => model.AutorNombre)</span>
+</div>
 <br>
-<p>
-    @Html.DisplayNameFor(model => model.AutorApellido):
-    @Html.DisplayFor(model => model.AutorApellido)
-</p>
+<div>
+    <span>@Html.DisplayNameFor(model => model.AutorApellido)</span>:
+    <span>@Html.DisplayFor(model => model.AutorApellido)</span>
+</div>
 <br>
-<p>
-    @Html.DisplayNameFor(model => model.AutorEdad):
-    @Html.DisplayFor(model => model.AutorEdad)
-</p>
+<div>
+    <span>@Html.DisplayNameFor(model => model.AutorEdad)</span>:
+    <span>@Html.DisplayFor(model => model.AutorEdad)</span>
+</div>
 <br>
-<p>
-    @Html.DisplayNameFor(model => model.AutorEmail):
-    @Html.DisplayFor(model => model.AutorEmail)
-</p>
+<div>
+    <span>@Html.DisplayNameFor(model => model.AutorEmail)</span>:
+    <span>@Html.DisplayFor(model => model.AutorEmail)</span>
+</div>
 <br>
 
 @Html.ActionLink("Volver a index", "Index", "Receta")

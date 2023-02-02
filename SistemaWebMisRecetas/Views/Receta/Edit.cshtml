@@ -1,13 +1,73 @@
-﻿<!DOCTYPE html>
+﻿@model SistemaWebMisRecetas.Models.Receta
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-    <div>
-        @RenderBody()
-    </div>
-</body>
-</html>
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@section SideBar{
+    <ul>
+        <li>@Html.ActionLink("Recetas", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Nueva", "Create", "Receta")</li>
+        <li>@Html.ActionLink("Editar", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Eliminar", "Index", "Receta")</li>
+    </ul>
+}
+
+<h1>Editar Receta</h1>
+<br>
+
+@using (Html.BeginForm("Edit", "Receta", FormMethod.Post))
+{
+    <p>
+        @Html.LabelFor(model => model.Titulo)
+        @Html.TextBoxFor(model => model.Titulo)
+        @Html.ValidationMessageFor(model => model.Titulo)
+    </p>
+    <br>
+    <p>
+        @Html.LabelFor(model => model.Categoria)
+        @Html.TextBoxFor(model => model.Categoria)
+        @Html.ValidationMessageFor(model => model.Categoria)
+    </p>
+    <br>
+    <p>
+        @Html.LabelFor(model => model.Ingredientes)
+        @Html.TextBoxFor(model => model.Ingredientes)
+        @Html.ValidationMessageFor(model => model.Ingredientes)
+    </p>
+    <br>
+    <p>
+        @Html.LabelFor(model => model.Instrucciones)
+        @Html.TextBoxFor(model => model.Instrucciones)
+        @Html.ValidationMessageFor(model => model.Instrucciones)
+    </p>
+    <br>
+    <p>
+        @Html.LabelFor(model => model.AutorNombre)
+        @Html.TextBoxFor(model => model.AutorNombre)
+        @Html.ValidationMessageFor(model => model.AutorNombre)
+    </p>
+    <br>
+    <p>
+        @Html.LabelFor(model => model.AutorApellido)
+        @Html.TextBoxFor(model => model.AutorApellido)
+        @Html.ValidationMessageFor(model => model.AutorApellido)
+    </p>
+    <br>
+    <p>
+        @Html.LabelFor(model => model.AutorEdad)
+        @Html.TextBoxFor(model => model.AutorEdad)
+        @Html.ValidationMessageFor(model => model.AutorEdad)
+    </p>
+    <br>
+    <p>
+        @Html.LabelFor(model => model.AutorEmail)
+        @Html.TextBoxFor(model => model.AutorEmail)
+        @Html.ValidationMessageFor(model => model.AutorEmail)
+    </p>
+    <br>
+
+    <input type="submit" action="Edit" />
+
+    @Html.ActionLink("Volver a Index", "Index", "Receta")
+}

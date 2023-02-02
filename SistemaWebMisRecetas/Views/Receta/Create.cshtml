@@ -4,6 +4,15 @@
     ViewData["Title"] = "Create";
 }
 
+@section SideBar{
+    <ul>
+        <li>@Html.ActionLink("Recetas", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Nueva", "Create", "Receta")</li>
+        <li>@Html.ActionLink("Editar", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Eliminar", "Index", "Receta")</li>
+    </ul>
+}
+
 <h1>Registrar Receta</h1>
 <br>
 

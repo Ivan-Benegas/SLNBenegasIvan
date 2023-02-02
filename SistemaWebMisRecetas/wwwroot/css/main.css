@@ -43,7 +43,6 @@ aside {
     height: 70vh;
     width: 30%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 2em;
@@ -90,4 +89,8 @@ table, th, td {
     align-self: flex-end;
     margin: 0px 5% 0px 0px;
     font-size: 1.5em;
+}
+
+ul {
+    list-style-type: none;
 }

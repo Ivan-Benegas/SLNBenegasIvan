@@ -4,44 +4,64 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>@Model.Titulo</h2>
-<p>¿Desea eliminar esta receta?</p>
+@section SideBar{
+    <ul>
+        <li>@Html.ActionLink("Recetas", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Nueva", "Create", "Receta")</li>
+        <li>@Html.ActionLink("Editar", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Eliminar", "Index", "Receta")</li>
+    </ul>
+}
+
+<h1>@Model.Titulo</h1>
+<br>
+<h3>¿Desea eliminar esta receta?</h3>
+<br>
 
 @using (Html.BeginForm("Delete", "Receta", FormMethod.Post))
 {
     <div>
-        <span>@Html.DisplayNameFor(model => model.Titulo)</span>
+        <span>@Html.DisplayNameFor(model => model.Titulo)</span>:
         <span>@Html.DisplayFor(model => model.Titulo)</span>
     </div>
+    <br>
     <div>
-        <span>@Html.DisplayNameFor(model => model.Categoria)</span>
+        <span>@Html.DisplayNameFor(model => model.Categoria)</span>:
         <span>@Html.DisplayFor(model => model.Categoria)</span>
     </div>
+    <br>
     <div>
-        <span>@Html.DisplayNameFor(model => model.Ingredientes)</span>
+        <span>@Html.DisplayNameFor(model => model.Ingredientes)</span>:
         <span>@Html.DisplayFor(model => model.Ingredientes)</span>
     </div>
-        <div>
-        <span>@Html.DisplayNameFor(model => model.Instrucciones)</span>
+    <br>
+    <div>
+        <span>@Html.DisplayNameFor(model => model.Instrucciones)</span>:
         <span>@Html.DisplayFor(model => model.Instrucciones)</span>
     </div>
-        <div>
-        <span>@Html.DisplayNameFor(model => model.AutorNombre)</span>
+    <br>
+    <div>
+        <span>@Html.DisplayNameFor(model => model.AutorNombre)</span>:
         <span>@Html.DisplayFor(model => model.AutorNombre)</span>
     </div>
-        <div>
-        <span>@Html.DisplayNameFor(model => model.AutorApellido)</span>
+    <br>
+    <div>
+        <span>@Html.DisplayNameFor(model => model.AutorApellido)</span>:
         <span>@Html.DisplayFor(model => model.AutorApellido)</span>
     </div>
-        <div>
-        <span>@Html.DisplayNameFor(model => model.AutorEdad)</span>
+    <br>
+    <div>
+        <span>@Html.DisplayNameFor(model => model.AutorEdad)</span>:
         <span>@Html.DisplayFor(model => model.AutorEdad)</span>
     </div>
+    <br>
     <div>
-        <span>@Html.DisplayNameFor(model => model.AutorEmail)</span>
+        <span>@Html.DisplayNameFor(model => model.AutorEmail)</span>:
         <span>@Html.DisplayFor(model => model.AutorEmail)</span>
     </div>
+    <br>
+
     <input type="submit" action="Delete" />
 
-    @Html.ActionLink("Volver", "Index", "Receta")
+    @Html.ActionLink("Volver a Index", "Index", "Receta")
 }

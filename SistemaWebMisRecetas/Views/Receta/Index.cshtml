@@ -4,6 +4,15 @@
     ViewData["Title"] = "Index Receta";
 }
 
+@section SideBar{
+    <ul>
+        <li>@Html.ActionLink("Recetas", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Nueva", "Create", "Receta")</li>
+        <li>@Html.ActionLink("Editar", "Index", "Receta")</li>
+        <li>@Html.ActionLink("Eliminar", "Index", "Receta")</li>
+    </ul>
+}
+
 <div class="crear-receta">@Html.ActionLink("Nueva", "Create", "Receta")</div>
 <br>
 <br>
@@ -18,6 +27,8 @@
         <th>Apellido del autor</th>
         <th>Edad del autor</th>
         <th>Email del autor</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -48,6 +59,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AutorEmail)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", "Receta", new{id=item.Id})
+            </td>
+            <td>
+                @Html.ActionLink("Eliminar", "Delete", "Receta", new{id=item.Id})
             </td>
         </tr>
     }
